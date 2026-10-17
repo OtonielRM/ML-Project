@@ -1,0 +1,49 @@
+% ---- page & fonts -----------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+
+% ---- math -------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+
+% ---- links (cleveref must load after hyperref and before \newtheorem) ----------
+\usepackage[colorlinks=true,linkcolor=NavyBlue,citecolor=NavyBlue,urlcolor=NavyBlue]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+
+% ---- theorem environments (one shared counter per chapter) -------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- entry metadata ---------------------------------------------------------
+% \source{...}: where the result comes from (lecture, book section, paper).
+\newcommand{\source}[1]{{\footnotesize\upshape\textcolor{gray}{Source: #1}}\par\smallskip}
+% \derived{YYYY-MM-DD}: date I reproduced the full proof closed-book (mastery-gate standard).
+\newcommand{\derived}[1]{\par\hfill{\footnotesize\textsf{$\checkmark$ derived closed-book: #1}}\par}
+% \pending: proof not yet written / not yet reproducible without notes.
+\newcommand{\pending}{\par\hfill{\footnotesize\textsf{\textcolor{BrickRed}{proof pending}}}\par}
+
+% ---- notation macros (documented in chapters/00-notation.tex) ---------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\tp}{^{\top}}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiterX{\inner}[2]{\langle}{\rangle}{#1, #2}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\colsp}{C}
+\DeclareMathOperator{\nullsp}{N}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}

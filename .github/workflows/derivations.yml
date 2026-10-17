@@ -1,0 +1,23 @@
+name: derivations
+
+on:
+  push:
+    paths: ["derivations/**", ".github/workflows/derivations.yml"]
+  pull_request:
+    paths: ["derivations/**", ".github/workflows/derivations.yml"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: derivations
+      - uses: actions/upload-artifact@v4
+        with:
+          name: derivations-book
+          path: derivations/build/main.pdf

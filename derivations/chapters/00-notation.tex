@@ -1,0 +1,17 @@
+\chapter{Notation and Conventions}
+
+\begin{itemize}[leftmargin=*]
+  \item Scalars $a, \lambda$; vectors $x \in \R^n$ (column vectors); matrices $A \in \R^{m \times n}$.
+  \item Transpose $A\tp$ (macro \verb|\tp|); inner product $\inner{x}{y} = x\tp y$ (\verb|\inner{x}{y}|).
+  \item Norms $\norm{x}_2$, $\norm{A}_F$ (\verb|\norm{...}|); absolute value $\abs{a}$ (\verb|\abs{...}|).
+        Use \verb|\norm*{...}| for auto-sized delimiters.
+  \item Column space $\colsp(A)$, null space $\nullsp(A)$, $\rank A$, $\tr A$, $\diag(d_1, \dots, d_n)$.
+  \item Optimization: $\argmin_x f(x)$, $\argmax_x f(x)$.
+\end{itemize}
+
+\section*{How each entry is written}
+
+Every result follows the same pattern: statement (\texttt{theorem}, \texttt{lemma}, \dots),
+\verb|\source{...}| for where it comes from, the proof in my own words, then
+\verb|\derived{YYYY-MM-DD}| once I can reproduce the full proof closed-book,
+or \verb|\pending| until then.

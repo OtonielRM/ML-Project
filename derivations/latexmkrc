@@ -1,0 +1,3 @@
+# Build with pdflatex; keep all auxiliary files out of the source tree.
+$pdf_mode = 1;
+$out_dir = 'build';

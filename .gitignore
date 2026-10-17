@@ -4,6 +4,9 @@ out/
 compile_commands.json
 CMakeUserPresets.json
 
+# LaTeX
+derivations/build/
+
 # Python
 __pycache__/
 *.py[cod]

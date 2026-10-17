@@ -9,6 +9,7 @@ its README doubles as a short technical report (question → method → results 
 | Project | Language | Topic | Status |
 |---|---|---|---|
 | [`linalg-kernels`](linalg-kernels/) | C++20 | Dense linear algebra from scratch (matmul, LU, QR, randomized SVD) | scaffold |
+| [`derivations`](derivations/) | LaTeX | Derivations book: every result derived in my own words, closed-book | living |
 
 ## Conventions
 
