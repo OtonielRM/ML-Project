@@ -1,0 +1,28 @@
+name: linalg-kernels
+
+on:
+  push:
+    paths: ["linalg-kernels/**", ".github/workflows/linalg-kernels.yml"]
+  pull_request:
+    paths: ["linalg-kernels/**", ".github/workflows/linalg-kernels.yml"]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        cxx: [g++, clang++]
+    defaults:
+      run:
+        working-directory: linalg-kernels
+    env:
+      CXX: ${{ matrix.cxx }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure (ASan + UBSan)
+        run: cmake --preset asan
+      - name: Build
+        run: cmake --build --preset asan
+      - name: Test
+        run: ctest --preset asan

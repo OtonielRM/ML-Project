@@ -1,0 +1,31 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "debug",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "asan",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build/asan",
+      "cacheVariables": { "LINALG_SANITIZE": "ON" }
+    },
+    {
+      "name": "release",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "debug", "configurePreset": "debug" },
+    { "name": "asan", "configurePreset": "asan" },
+    { "name": "release", "configurePreset": "release" }
+  ],
+  "testPresets": [
+    { "name": "debug", "configurePreset": "debug", "output": { "outputOnFailure": true } },
+    { "name": "asan", "configurePreset": "asan", "output": { "outputOnFailure": true } },
+    { "name": "release", "configurePreset": "release", "output": { "outputOnFailure": true } }
+  ]
+}
